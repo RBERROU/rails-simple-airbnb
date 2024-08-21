@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1><%= @flat.name %></h1>
+      <p><%= @flat.address %></p>
+
+      <h3>A bit more about this flat...</h3>
+      <p><%= @flat.description %></p>
+
+      <h3>Details</h3>
+      <p>
+        <strong>Price per night:</strong> $<%= @flat.price_per_night %><br>
+        <strong>Number of guests:</strong> <%= @flat.number_of_guests %>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <%= link_to "Edit", edit_flat_path(@flat), class: "btn btn-secondary mb-2" %>
+      <%= link_to "Remove", flat_path(@flat), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      <!-- Other content such as booking form and share buttons -->
+    </div>
+  </div>
+</div>
